@@ -1,0 +1,42 @@
+{
+  "author": "Antonio Santiago <asantiagop@gmail.com> (http://acuriousanimal.com/blog)",
+  "name": "clyde",
+  "homepage": "https://github.com/acanimal/clyde-simple-access-log",
+  "description": "Access log filter based on morgan for Clyde API gateway.",
+  "keywords": [
+    "clyde",
+    "filter",
+    "access",
+    "log"
+  ],
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/acanimal/clyde-simple-access-log.git"
+  },
+  "main": "./lib/index.js",
+  "directories": {
+    "lib": "./lib"
+  },
+  "license": "MIT",
+  "scripts": {
+    "lint": "./node_modules/eslint/bin/eslint.js **/*.js",
+    "test": "./node_modules/mocha/bin/mocha test/**/*.test.js"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "dependencies": {
+    "file-stream-rotator": "0.0.6",
+    "mkdirp": "^0.5.1",
+    "morgan": "^1.6.1"
+  },
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "clyde": "git+https://github.com/acanimal/clyde.git",
+    "eslint": "^0.24.0",
+    "mocha": "^2.2.5",
+    "moment": "^2.10.3",
+    "supertest": "^1.0.1"
+  }
+}
