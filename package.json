@@ -32,7 +32,6 @@
     "morgan": "^1.6.1"
   },
   "devDependencies": {
-    "chai": "^3.0.0",
     "clyde": "git+https://github.com/acanimal/clyde.git",
     "eslint": "^0.24.0",
     "mocha": "^2.2.5",

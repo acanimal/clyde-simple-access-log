@@ -1,14 +1,19 @@
 # Simple Access log
 
-A [morgan](https://github.com/expressjs/morgan) based logger which stores information into a log file for each request access.
+Access log filter implementation for [Clyde](https://github.com/acanimal/clyde) API gateway, which allows to store request information into files.
 
+> Implementation is based in [morgan](https://github.com/expressjs/morgan) module.
 
 ## Configuration
 
-Accepts the configuration properties:
+Filter accepts the next configuration properties (most of them wrapping [morgan](https://github.com/expressjs/morgan) properties):
 
-* `file`: The file where to store log information.
-* `directory`: The folder where to store log files.
+* `directory`: The folder where to store log files. Default `./`.
+* `file`: The file where to store log information. Default `access-%DATE%.log`.
+* `format`: Log format to store information. See available [morgan](https://github.com/expressjs/morgan) values. Default `combined`.
+* `frequency`: Rotating log files are stored with the specified frequency value. See available [morgan](https://github.com/expressjs/morgan) values. Default `daily`.
+* `verbose`: Log to STDOUT when it rotates files and name of log file. Default `false`.
+* `date_format`: Format used to attach dates to file names. Default `YYYY-MM-DD`.
 
 
 ## Examples
@@ -21,8 +26,8 @@ All request to any provider will be stored:
 {
   "prefilters" : [
     {
-      "id" : "logger",
-      "path" : "./filters/simple-access-log",
+      "id" : "global-log",
+      "path" : "simple-access-log",
       "config" : {
         "directory" : "./tmp/log",
         "file" : "global-access-%DATE%.log"
@@ -46,11 +51,11 @@ Only the requests addresses to the provider will be stored
       "target" : "http://some_server",
       "prefilters" : [
         {
-          "id" : "logger",
-          "path" : "./filters/simple-access-log",
+          "id" : "provider-logger",
+          "path" : "simple-access-log",
           "config" : {
             "directory" : "./tmp/log",
-            "file" : "some_provder-access-%DATE%.log"
+            "file" : "provider-access-%DATE%.log"
           }
         }
     },
@@ -62,7 +67,8 @@ Only the requests addresses to the provider will be stored
 
 ## Notes:
 
-* As a postfilter it is only invoked for success responses.
+* Note if you configure as a postfilter it is only invoked for success responses.
+
 
 # License
 

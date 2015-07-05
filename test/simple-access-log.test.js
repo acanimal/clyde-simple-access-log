@@ -3,7 +3,6 @@
 var path = require("path"),
     fs = require("fs"),
     moment = require("moment"),
-    expect = require("chai").expect,
     request = require("supertest"),
     http = require("http"),
     clyde = require("clyde");
@@ -23,7 +22,7 @@ describe("simple-access-log", function() {
 
     var options = {
       port: 8888,
-      logfile: "clyde.log",
+      logfile: path.join(logDirectory, "clyde.log"),
       loglevel: "info",
 
       prefilters: [
@@ -59,7 +58,7 @@ describe("simple-access-log", function() {
     // Check for expected log file is created
     var expectedFile = "access-log." + moment().format("YYYY-MM-DD");
     fs.exists(path.join(logDirectory, expectedFile), function(exists) {
-      if(exists) {
+      if (exists) {
         done();
       } else {
         throw new Error("Expected log file '" + path.join(logDirectory, expectedFile) + "' not found !!!");
