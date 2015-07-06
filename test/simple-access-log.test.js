@@ -17,7 +17,7 @@ describe("simple-access-log", function() {
   });
 
 
-  it("should success store a request access", function(done) {
+  it("should success storing a request access log", function(done) {
     var logDirectory = path.join(__dirname, "../tmp");
 
     var options = {

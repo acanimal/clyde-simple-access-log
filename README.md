@@ -1,4 +1,4 @@
-# Simple Access log
+# Simple Access Log Filter
 
 Access log filter implementation for [Clyde](https://github.com/acanimal/clyde) API gateway, which allows to store request information into files.
 

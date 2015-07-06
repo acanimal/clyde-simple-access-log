@@ -2,7 +2,7 @@
   "author": "Antonio Santiago <asantiagop@gmail.com> (http://acuriousanimal.com/blog)",
   "name": "clyde",
   "homepage": "https://github.com/acanimal/clyde-simple-access-log",
-  "description": "Access log filter based on morgan for Clyde API gateway.",
+  "description": "Access log filter for Clyde API gateway.",
   "keywords": [
     "clyde",
     "filter",
