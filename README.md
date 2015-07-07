@@ -27,7 +27,7 @@ All request to any provider will be stored:
   "prefilters" : [
     {
       "id" : "global-log",
-      "path" : "simple-access-log",
+      "path" : "clyde-simple-access-log",
       "config" : {
         "directory" : "./tmp/log",
         "file" : "global-access-%DATE%.log"
@@ -52,7 +52,7 @@ Only the requests addresses to the provider will be stored
       "prefilters" : [
         {
           "id" : "provider-logger",
-          "path" : "simple-access-log",
+          "path" : "clyde-simple-access-log",
           "config" : {
             "directory" : "./tmp/log",
             "file" : "provider-access-%DATE%.log"
