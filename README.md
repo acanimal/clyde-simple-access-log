@@ -4,6 +4,17 @@ Access log filter implementation for [Clyde](https://github.com/acanimal/clyde) 
 
 > Implementation is based in [morgan](https://github.com/expressjs/morgan) module.
 
+<!-- MarkdownTOC -->
+
+- [Configuration](#configuration)
+  - [Examples](#examples)
+    - [Configured as global prefilter](#configured-as-global-prefilter)
+    - [Configured as provider prefilter](#configured-as-provider-prefilter)
+  - [Notes](#notes)
+- [License](#license)
+
+<!-- /MarkdownTOC -->
+
 ## Configuration
 
 Filter accepts the next configuration properties (most of them wrapping [morgan](https://github.com/expressjs/morgan) properties):
@@ -64,8 +75,7 @@ Only the requests addresses to the provider will be stored
 }
 ```
 
-
-## Notes:
+## Notes
 
 * Note if you configure as a postfilter it is only invoked for success responses.
 
