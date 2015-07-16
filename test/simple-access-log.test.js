@@ -17,6 +17,41 @@ describe("simple-access-log", function() {
   });
 
 
+  it("should initialize filter without configuration", function() {
+    var logDirectory = path.join(__dirname, "../tmp");
+
+    var options = {
+      port: 8888,
+      logfile: path.join(logDirectory, "clyde.log"),
+      loglevel: "info",
+
+      prefilters: [
+        {
+          id: "log",
+          path: path.join(__dirname, "../lib/index.js")
+        }
+      ],
+
+      providers: [
+        {
+          id: "id",
+          context: "/provider",
+          target: "http://server"
+        }
+      ]
+    };
+
+    try {
+      // Create server with clyde's middleware options
+      var middleware = clyde.createMiddleware(options);
+      server = http.createServer(middleware);
+      server.listen(options.port);
+    } catch(err) {
+      throw err;
+    }
+  });
+
+
   it("should success storing a request access log", function(done) {
     var logDirectory = path.join(__dirname, "../tmp");
 
