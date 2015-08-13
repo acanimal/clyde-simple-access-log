@@ -5,7 +5,7 @@ var path = require("path"),
     moment = require("moment"),
     request = require("supertest"),
     http = require("http"),
-    clyde = require("clyde");
+    clyde = require("clydeio");
 
 
 describe("simple-access-log", function() {
