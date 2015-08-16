@@ -4,17 +4,18 @@ Access log filter implementation for [Clyde](https://github.com/acanimal/clyde) 
 
 > Implementation is based in [morgan](https://github.com/expressjs/morgan) module.
 
-<!-- MarkdownTOC -->
+<!-- TOC depth:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- [Installation](#installation)
-- [Configuration](#configuration)
-  - [Examples](#examples)
-    - [Configured as global prefilter](#configured-as-global-prefilter)
-    - [Configured as provider prefilter](#configured-as-provider-prefilter)
-  - [Notes](#notes)
+- [Simple Access Log Filter](#simple-access-log-filter)
+	- [Installation](#installation)
+	- [Configuration](#configuration)
+	- [Examples](#examples)
+		- [Configured as global prefilter](#configured-as-global-prefilter)
+		- [Configured as provider prefilter](#configured-as-provider-prefilter)
+	- [Notes](#notes)
 - [License](#license)
 
-<!-- /MarkdownTOC -->
+<!-- /TOC -->
 
 ## Installation
 
@@ -43,7 +44,7 @@ All request to any provider will be stored:
   "prefilters" : [
     {
       "id" : "global-log",
-      "path" : "clyde-simple-access-log",
+      "path" : "clydeio-simple-access-log",
       "config" : {
         "directory" : "./tmp/log",
         "file" : "global-access-%DATE%.log"
@@ -68,7 +69,7 @@ Only the requests addresses to the provider will be stored
       "prefilters" : [
         {
           "id" : "provider-logger",
-          "path" : "clyde-simple-access-log",
+          "path" : "clydeio-simple-access-log",
           "config" : {
             "directory" : "./tmp/log",
             "file" : "provider-access-%DATE%.log"
