@@ -6,6 +6,7 @@ Access log filter implementation for [Clyde](https://github.com/acanimal/clyde) 
 
 <!-- MarkdownTOC -->
 
+- [Installation](#installation)
 - [Configuration](#configuration)
   - [Examples](#examples)
     - [Configured as global prefilter](#configured-as-global-prefilter)
@@ -14,6 +15,10 @@ Access log filter implementation for [Clyde](https://github.com/acanimal/clyde) 
 - [License](#license)
 
 <!-- /MarkdownTOC -->
+
+## Installation
+
+`npm install clydeio-simple-access-log --save`
 
 ## Configuration
 
